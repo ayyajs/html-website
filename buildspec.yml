@@ -6,6 +6,11 @@
 
 version: 0.2
 phases:
+  install:
+    runtime-versions:
+      docker: 18
+      python: 3.7
+      ruby: 2.6
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
@@ -18,7 +23,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t 234507186020.dkr.ecr.ap-southeast-1.amazonaws.com/pegepay:latest .
+      - docker build -t 234507186020.dkr.ecr.ap-southeast-1.amazonaws.com/pegepay:latest.
       - docker tag 234507186020.dkr.ecr.ap-southeast-1.amazonaws.com/pegepay:latest 234507186020.dkr.ecr.ap-southeast-1.amazonaws.com/pegepay:v1
   post_build:
     commands:
