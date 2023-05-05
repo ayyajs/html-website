@@ -10,7 +10,7 @@ phases:
     runtime-versions:
       docker: 18
       python: 3.7
-      ruby: 2.6
+      ruby: 3.2
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
