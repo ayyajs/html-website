@@ -2,7 +2,7 @@
 #   __ACCOUNT_NUMBER__
 #   __ECR_REGION__
 #   __ECR_REPOSITORY_NAME__
-#   __ECS_CONTAINER_NAME__
+#   __ECS_CONTAINER_NAME__ 
 
 version: 0.2
 phases:
