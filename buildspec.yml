@@ -30,5 +30,3 @@ phases:
       - echo Writing image definitions file...
       - printf '[{"name":"pegepay-demo","imageUri":"%$"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       - cat imagedefinitions.json
-  artifacts:
-    files: imagedefinitions.json
