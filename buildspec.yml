@@ -11,8 +11,8 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws --version
-      - aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 072324354363.dkr.ecr.us-west-2.amazonaws.com
-      - REPOSITORY_URI=072324354363.dkr.ecr.us-west-2.amazonaws.com/html-repo
+      - aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 234507186020.dkr.ecr.ap-southeast-1.amazonaws.com
+      - REPOSITORY_URI=234507186020.dkr.ecr.ap-southeast-1.amazonaws.com/pegepay
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
@@ -28,7 +28,7 @@ phases:
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
-      - printf '[{"name":"html-repo-demo","imageUri":"$REPOSITORY_URI:$IMAGE_TAG"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json      
+      - printf '[{"name":"pegepay-demo","imageUri":"$REPOSITORY_URI:$IMAGE_TAG"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json      
       - cat imagedefinitions.json
       - echo All Progress Completed!
 artifacts:
