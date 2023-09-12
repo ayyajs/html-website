@@ -1,1 +1,0 @@
-<?php echo '<p>Hello World12</p>'; ?>
